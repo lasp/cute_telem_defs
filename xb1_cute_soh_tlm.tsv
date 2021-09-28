@@ -1,0 +1,174 @@
+Hex Addr	Start Byte[:Bit]	Package	Mnemonic	Short Description	Tlm Type	Tlm Conversion (EU/lsb)	Eng. Units (EU)
+0x400	0	SOH_L0	WDT_2SEC_CNT	Watchdog 2 Second Counter	uint3	1	none
+0x400:3	0:3	SOH_L0	RESET_ARMED	Processor reset armed status	uint1	1	1/ARMED 0/NOT_ARMED
+0x400:4	0:4	SOH_L0	WDT_STAT	Watch Reset Event Status	uint1	1	0/NO_WDT 1/WDT
+0x400:5	0:5	SOH_L0	WDT_EN	Watchdog Reset Enable Status	uint1	1	0/DISABLED 1/ENABLED
+0x400:6	0:6	SOH_L0	TABLE_SELECT	Table select	uint1	1	0/FLASH 1/COMPILED
+0x400:7	0:7	SOH_L0	BOOT_RELAY	Boot Relay Status	uint1	1	1/PRIMARY 0/REDUNDANT
+0x401	1	SOH_L0	L0_ACPT_CNT	Level 0 Accept Counter	uint8	1	none
+0x402	2	SOH_L0	L0_RJCT_CNT	Level 0 Reject Counter	uint8	1	none
+0x403	3	SOH_L0	HW_SEC_CNT	Hardware Second Counter	uint8	1	none
+0x40c	12	SOH_L0	TIME_TAG	Time Tag of Last Incoming Command	uint32	1	USEC
+0x414	20	SOH_L0	PLD_TLM_ACK_CNT	Number of accepted telemetry packets	uint8	1	none
+0x415	21	SOH_L0	PLD_CMD_CNT	Number of commands sent	uint8	1	none
+0x416	22	SOH_L0	PLD_TLM_TO_CNT	Number of timeouts waiting for telemetry	uint8	1	none
+0x417	23	SOH_L0	PLD_TLM_NAK_CNT	Number of rejected telemetry packets	uint8	1	none
+0x418	24	SOH_L0	SPARE_END	spare end	uint64	1	none
+0x420	32	SOH_COMMAND_TLM	CMD_STATUS	Command Status	uint8	1	0/OK 1/BAD_APID 2/BAD_OPCODE 3/BAD_DATA 4/NOW_READING 5/DONE_READING 6/IDLE 7/NO_CMD_DATA 8/CMD_SRVC_OVERRUN 9/CMD_APID_OVERRUN 10/INCORRECT_WHEEL_MODE 11/BAD_ELEMENT 12/TABLES_BUSY 13/FLASH_NOT_ARMED 14/THRUSTERS_DISABLED 15/ATT_ERR_TOO_HIGH 16/ASYNC_REFUSED 17/DRIVER_ERROR
+0x421	33	SOH_COMMAND_TLM	REALTIME_CMD_ACCEPT_COUNT	Realtime Command Accept Count	uint8	1	none
+0x422	34	SOH_COMMAND_TLM	REALTIME_CMD_REJECT_COUNT	Realtime Command Reject Count	uint8	1	none
+0x423	35	SOH_COMMAND_TLM	STORED_CMD_ACCEPT_COUNT	Stored Command Accept Count	uint8	1	none
+0x424	36	SOH_COMMAND_TLM	STORED_CMD_REJECT_COUNT	Stored Command Reject Count	uint8	1	none
+0x425	37	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK1	Macros Executing Bitpack	uint8	1	bitpack
+0x425	37	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT8	Macros Executing Bitpack bit 8	uint1	1	none
+0x425:1	37:1	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT7	Macros Executing Bitpack bit 7	uint1	1	none
+0x425:2	37:2	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT6	Macros Executing Bitpack bit 6	uint1	1	none
+0x425:3	37:3	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT5	Macros Executing Bitpack bit 5	uint1	1	none
+0x425:4	37:4	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT4	Macros Executing Bitpack bit 4	uint1	1	none
+0x425:5	37:5	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT3	Macros Executing Bitpack bit 3	uint1	1	none
+0x425:6	37:6	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT2	Macros Executing Bitpack bit 2	uint1	1	none
+0x425:7	37:7	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT1	Macros Executing Bitpack bit 1	uint1	1	none
+0x426	38	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK2	Macros Executing Bitpack	uint8	1	bitpack
+0x426	38	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT16	Macros Executing Bitpack bit 16	uint1	1	none
+0x426:1	38:1	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT15	Macros Executing Bitpack bit 15	uint1	1	none
+0x426:2	38:2	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT14	Macros Executing Bitpack bit 14	uint1	1	none
+0x426:3	38:3	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT13	Macros Executing Bitpack bit 13	uint1	1	none
+0x426:4	38:4	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT12	Macros Executing Bitpack bit 12	uint1	1	none
+0x426:5	38:5	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT11	Macros Executing Bitpack bit 11	uint1	1	none
+0x426:6	38:6	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT10	Macros Executing Bitpack bit 10	uint1	1	none
+0x426:7	38:7	SOH_COMMAND_TLM	MACROS_EXECUTING_PACK_BIT9	Macros Executing Bitpack bit 9	uint1	1	none
+0x427	39	SOH_GENERAL	SCRUB_STATUS_OVERALL	Scrub Status Overall	int8	1	0/OK -1/FAIL
+0x428	40	SOH_GENERAL	IMAGE_BOOTED	Which image was booted	uint8	1	0/PRIMARY 1/REDUNDANT
+0x429	41	SOH_GENERAL	IMAGE_AUTO_FAILOVER	Automatic image failover occurred	uint8	1	0/OK 1/FAIL
+0x42a	42	SOH_TIME	TAI_SECONDS	TAI Seconds	uint32	0.2	sec
+0x42e	46	SOH_TIME	TIME_VALID	Time Valid	uint8	1	1/YES 0/NO
+0x42f	47	SOH_REFS	POSITION_WRT_ECI1	Orbit Position, repoted in the ECI (J2000) frame	int32	1.9999999e-05	km
+0x433	51	SOH_REFS	POSITION_WRT_ECI2	Orbit Position, repoted in the ECI (J2000) frame	int32	1.9999999e-05	km
+0x437	55	SOH_REFS	POSITION_WRT_ECI3	Orbit Position, repoted in the ECI (J2000) frame	int32	1.9999999e-05	km
+0x43b	59	SOH_REFS	VELOCITY_WRT_ECI1	Orbit Velocity, repoted in the ECI (J2000) frame	int32	5.0e-09	km/s
+0x43f	63	SOH_REFS	VELOCITY_WRT_ECI2	Orbit Velocity, repoted in the ECI (J2000) frame	int32	5.0e-09	km/s
+0x443	67	SOH_REFS	VELOCITY_WRT_ECI3	Orbit Velocity, repoted in the ECI (J2000) frame	int32	5.0e-09	km/s
+0x447	71	SOH_REFS	REFS_VALID	Refs Valid	uint8	1	1/YES 0/NO
+0x448	72	SOH_ATT_DET	Q_BODY_WRT_ECI1	Attitude Quaternion, spacecraft body frame with respect to ECI (J2000) frame	int32	4.9999999e-10	none
+0x44c	76	SOH_ATT_DET	Q_BODY_WRT_ECI2	Attitude Quaternion, spacecraft body frame with respect to ECI (J2000) frame	int32	4.9999999e-10	none
+0x450	80	SOH_ATT_DET	Q_BODY_WRT_ECI3	Attitude Quaternion, spacecraft body frame with respect to ECI (J2000) frame	int32	4.9999999e-10	none
+0x454	84	SOH_ATT_DET	Q_BODY_WRT_ECI4	Attitude Quaternion, spacecraft body frame with respect to ECI (J2000) frame	int32	4.9999999e-10	none
+0x458	88	SOH_ATT_DET	BODY_RATE1	Body Frame Rate, repoted in the spacecraft body frame	int32	5.0e-09	rad/sec
+0x458	88	SOH_ATT_DET	BODY_RATE1_DPS	Body Frame Rate, repoted in the spacecraft body frame (deg/s)	int32	2.864788975654116e-07	deg/s
+0x458	88	SOH_ATT_DET	BODY_RATE1_RPM	Body Frame Rate, repoted in the spacecraft body frame (RPM)	int32	4.77464829275686e-08	RPM
+0x45c	92	SOH_ATT_DET	BODY_RATE2	Body Frame Rate, repoted in the spacecraft body frame	int32	5.0e-09	rad/sec
+0x45c	92	SOH_ATT_DET	BODY_RATE2_DPS	Body Frame Rate, repoted in the spacecraft body frame (deg/s)	int32	2.864788975654116e-07	deg/s
+0x45c	92	SOH_ATT_DET	BODY_RATE2_RPM	Body Frame Rate, repoted in the spacecraft body frame (RPM)	int32	4.77464829275686e-08	RPM
+0x460	96	SOH_ATT_DET	BODY_RATE3	Body Frame Rate, repoted in the spacecraft body frame	int32	5.0e-09	rad/sec
+0x460	96	SOH_ATT_DET	BODY_RATE3_DPS	Body Frame Rate, repoted in the spacecraft body frame (deg/s)	int32	2.864788975654116e-07	deg/s
+0x460	96	SOH_ATT_DET	BODY_RATE3_RPM	Body Frame Rate, repoted in the spacecraft body frame (RPM)	int32	4.77464829275686e-08	RPM
+0x464	100	SOH_ATT_DET	BAD_ATT_TIMER	BadAttTimer	uint32	1	cycles
+0x468	104	SOH_ATT_DET	BAD_RATE_TIMER	BadRateTimer	uint32	1	cycles
+0x46c	108	SOH_ATT_DET	REINIT_COUNT	Attitude Filter Reinit Count	uint32	1	none
+0x470	112	SOH_ATT_DET	ATTITUDE_VALID	Attitude Valid	uint8	1	1/YES 0/NO
+0x471	113	SOH_ATT_DET	MEAS_ATT_VALID	Measured Attitude Valid	uint8	1	1/YES 0/NO
+0x472	114	SOH_ATT_DET	MEAS_RATE_VALID	Measured Rate Valid	uint8	1	1/YES 0/NO
+0x473	115	SOH_ATT_DET	TRACKER_USED	Tracker Used	uint8	1	none
+0x474	116	SOH_ATT_CMD	HR_CYCLE_SAFE_MODE	HR Run Count at Time of Safe Mode	uint32	1	cycles
+0x478	120	SOH_ATT_CMD	ROTISSERIE_RATE	Desired Sun Rot Rate, about the commanded sun vector	int16	3.9999999e-05	rad/sec
+0x478	120	SOH_ATT_CMD	ROTISSERIE_RATE_DPS	Desired Sun Rot Rate, about the commanded sun vector (deg/s)	int16	0.0022918311232275135	deg/s
+0x478	120	SOH_ATT_CMD	ROTISSERIE_RATE_RPM	Desired Sun Rot Rate, about the commanded sun vector (RPM)	int16	0.00038197185387125223	RPM
+0x47a	122	SOH_ATT_CMD	ADCS_MODE	ADCS Mode	uint8	1	0/SUN_POINT 1/FINE_REF_POINT 2/SEARCH_INIT 3/SEARCHING 4/WAITING 5/CONVERGING 6/ON_SUN 7/NOT_ACTIVE
+0x47b	123	SOH_ATT_CMD	SAFE_MODE_REASON	Safe Mode Reason	uint8	1	1/BOOT 2/COMMAND 4/ATTITUDE_INVALID 8/TIME_INVALID 12/ATTITUDE_TIME_INVALID 16/REFS_INVALID
+0x47c	124	SOH_ATT_CMD	RECOMMEND_SUN_POINT	RecommendSunPoint	uint8	1	1/YES 0/NO
+0x47d	125	SOH_RW_DRIVE	FILTERED_SPEED_RPM1	Wheel Meas Speed	int16	0.40000001	RPM
+0x47f	127	SOH_RW_DRIVE	FILTERED_SPEED_RPM2	Wheel Meas Speed	int16	0.40000001	RPM
+0x481	129	SOH_RW_DRIVE	FILTERED_SPEED_RPM3	Wheel Meas Speed	int16	0.40000001	RPM
+0x483	131	SOH_TRACKER	OPERATING_MODE	Tracker Operating Mode	uint8	1	0/IDLE 1/INITIALIZE 2/STARID 3/TRACK 4/PHOTO 5/CAL
+0x484	132	SOH_TRACKER	STAR_ID_STEP	Star ID Step	uint8	1	0/IDLE 1/INITIALIZE 2/WAITING_FOR_IMAGE1 3/WAITING_FOR_IMAGE2 4/CALCULATE_RATE 5/MAKE_UNIT_VECTORS 6/AWAITING_TRISTAR 7/OK_FOUND_4 8/OK_FOUND_3 9/TIME_OUT 10/SPARE 11/NO_MATCH
+0x485	133	SOH_TRACKER	ATT_STATUS	Tracker Attitude Status	uint8	1	0/OK 1/PENDING 2/BAD 3/TOO_FEW_STARS 4/QUEST_FAILED 5/RESIDUALS_TOO_HIGH 6/TOO_CLOSE_TO_EDGE 7/PIX_AMP_TOO_LOW 8/PIX_AMP_TOO_HIGH 9/BACKGND_TOO_HIGH 10/TRACK_FAILURE 11/PIX_SUM_TOO_LOW 12/UNUSED 13/TOO_DIM_FOR_STARID 14/TOO_MANY_GROUPS 15/TOO_FEW_GROUPS 16/CHANNEL_DISABLED 17/TRACK_BLK_OVERLAP 18/OK_FOR_STARID 19/TOO_CLOSE_TO_OTHER 20/TOO_MANY_PIXELS 21/TOO_MANY_COLUMNS 22/TOO_MANY_ROWS 23/OPEN 24/CLOSED 25/RATE_TOO_HIGH
+0x486	134	SOH_TRACKER	NUM_ATTITUDE_STARS	Num Stars Used in Att	uint8	1	none
+0x487	135	SOH_ATT_CTRL	POSITION_ERROR1	Attitude Error, reported in the spacecraft body frame	int32	1.9999999e-09	rad
+0x48b	139	SOH_ATT_CTRL	POSITION_ERROR2	Attitude Error, reported in the spacecraft body frame	int32	1.9999999e-09	rad
+0x48f	143	SOH_ATT_CTRL	POSITION_ERROR3	Attitude Error, reported in the spacecraft body frame	int32	1.9999999e-09	rad
+0x493	147	SOH_ATT_CTRL	TIME_INTO_SEARCH	Time Into Sun Search	uint16	1	sec
+0x495	149	SOH_ATT_CTRL	WAIT_TIMER	Sun Search Wait Timer	uint16	1	sec
+0x497	151	SOH_ATT_CTRL	SUN_POINT_ANGLE_ERROR	Sun Point Angle Error, angle between estimated sun and command sun vector	uint16	0.0029999998	deg
+0x499	153	SOH_ATT_CTRL	SUN_POINT_STATE	Sun Point State	uint8	1	0/SUN_POINT 1/FINE_REF_POINT 2/SEARCH_INIT 3/SEARCHING 4/WAITING 5/CONVERGING 6/ON_SUN 7/NOT_ACTIVE
+0x49a	154	SOH_MOMENTUM	MOMENTUM_VECTOR_BODY1	System Momentum in Body Frame, reported in the spacecraft body frame	int16	0.00019999999	Nms
+0x49c	156	SOH_MOMENTUM	MOMENTUM_VECTOR_BODY2	System Momentum in Body Frame, reported in the spacecraft body frame	int16	0.00019999999	Nms
+0x49e	158	SOH_MOMENTUM	MOMENTUM_VECTOR_BODY3	System Momentum in Body Frame, reported in the spacecraft body frame	int16	0.00019999999	Nms
+0x4a0	160	SOH_MOMENTUM	DUTY_CYCLE1	Torque Rod Duty Cycle	int8	1	none
+0x4a1	161	SOH_MOMENTUM	DUTY_CYCLE2	Torque Rod Duty Cycle	int8	1	none
+0x4a2	162	SOH_MOMENTUM	DUTY_CYCLE3	Torque Rod Duty Cycle	int8	1	none
+0x4a3	163	SOH_MOMENTUM	TORQUE_ROD_MODE1	Torque Rod Ctrl Mode	uint8	1	0/OFF 1/ON_POS 2/ON_NEG 3/AUTO 4/MEASURED 5/MODELED 6/DELAYED_AUTO 7/NO_FIELD_VALID
+0x4a4	164	SOH_MOMENTUM	TORQUE_ROD_MODE2	Torque Rod Ctrl Mode	uint8	1	0/OFF 1/ON_POS 2/ON_NEG 3/AUTO 4/MEASURED 5/MODELED 6/DELAYED_AUTO 7/NO_FIELD_VALID
+0x4a5	165	SOH_MOMENTUM	TORQUE_ROD_MODE3	Torque Rod Ctrl Mode	uint8	1	0/OFF 1/ON_POS 2/ON_NEG 3/AUTO 4/MEASURED 5/MODELED 6/DELAYED_AUTO 7/NO_FIELD_VALID
+0x4a6	166	SOH_MOMENTUM	MAG_SOURCE_USED	Mag Field Source	uint8	1	0/OFF 1/ON_POS 2/ON_NEG 3/AUTO 4/MEASURED 5/MODELED 6/DELAYED_AUTO 7/NO_FIELD_VALID
+0x4a7	167	SOH_MOMENTUM	MOMENTUM_VECTOR_VALID	Momentum Vector Valid	uint8	1	1/YES 0/NO
+0x4a8	168	SOH_CSS	SUN_VECTOR_BODY1	Meas Sun Body Vector, reported in the spacecraft body frame	int16	9.9999997e-05	none
+0x4aa	170	SOH_CSS	SUN_VECTOR_BODY2	Meas Sun Body Vector, reported in the spacecraft body frame	int16	9.9999997e-05	none
+0x4ac	172	SOH_CSS	SUN_VECTOR_BODY3	Meas Sun Body Vector, reported in the spacecraft body frame	int16	9.9999997e-05	none
+0x4ae	174	SOH_CSS	SUN_VECTOR_STATUS	Meas Sun Body Vector Status	uint8	1	0/GOOD 1/COARSE 2/BAD
+0x4af	175	SOH_CSS	SUN_SENSOR_USED	Sun Sensor Package Used	uint8	1	none
+0x4b0	176	SOH_MAG	MAG_VECTOR_BODY1	Meas Mag Field, reported in the spacecraft body frame	int16	5.0e-09	T
+0x4b2	178	SOH_MAG	MAG_VECTOR_BODY2	Meas Mag Field, reported in the spacecraft body frame	int16	5.0e-09	T
+0x4b4	180	SOH_MAG	MAG_VECTOR_BODY3	Meas Mag Field, reported in the spacecraft body frame	int16	5.0e-09	T
+0x4b6	182	SOH_MAG	MAG_VECTOR_VALID	Meas Mag Field Valid	uint8	1	1/YES 0/NO
+0x4b7	183	SOH_IMU	NEW_PACKET_COUNT	IMU Packet Count	uint8	1	none
+0x4b8	184	SOH_IMU	IMU_VECTOR_VALID	IMU Rate Valid	uint8	1	1/YES 0/NO
+0x4b9	185	SOH_CLOCK_SYNC	HR_RUN_COUNT	High Rate Run Count	uint32	1	none
+0x4bd	189	SOH_CLOCK_SYNC	HR_EXEC_TIME_MS	High Rate Duration	uint8	1	msec
+0x4be	190	SOH_ANALOGS	BOX1_TEMP	Box 1 Temp	int16	0.0049999999	degC
+0x4c0	192	SOH_ANALOGS	BUS_VOLTAGE	Bus Voltage	int16	0.001	V
+0x4c2	194	SOH_ANALOGS	BATTERY_VOLTAGE	Battery Voltage	uint16	0.0020000001	V
+0x4c4	196	SOH_ANALOGS	BATTERY_CURRENT	Battery Current	int16	0.0020000001	A
+0x4c6	198	SOH_TRACKER2	OPERATING_MODE	Tracker Operating Mode	uint8	1	0/IDLE 1/INITIALIZE 2/STARID 3/TRACK 4/PHOTO 5/CAL
+0x4c7	199	SOH_TRACKER2	STAR_ID_STEP	Star ID Step	uint8	1	0/IDLE 1/INITIALIZE 2/WAITING_FOR_IMAGE1 3/WAITING_FOR_IMAGE2 4/CALCULATE_RATE 5/MAKE_UNIT_VECTORS 6/AWAITING_TRISTAR 7/OK_FOUND_4 8/OK_FOUND_3 9/TIME_OUT 10/SPARE 11/NO_MATCH
+0x4c8	200	SOH_TRACKER2	ATT_STATUS	Tracker Attitude Status	uint8	1	0/OK 1/PENDING 2/BAD 3/TOO_FEW_STARS 4/QUEST_FAILED 5/RESIDUALS_TOO_HIGH 6/TOO_CLOSE_TO_EDGE 7/PIX_AMP_TOO_LOW 8/PIX_AMP_TOO_HIGH 9/BACKGND_TOO_HIGH 10/TRACK_FAILURE 11/PIX_SUM_TOO_LOW 12/UNUSED 13/TOO_DIM_FOR_STARID 14/TOO_MANY_GROUPS 15/TOO_FEW_GROUPS 16/CHANNEL_DISABLED 17/TRACK_BLK_OVERLAP 18/OK_FOR_STARID 19/TOO_CLOSE_TO_OTHER 20/TOO_MANY_PIXELS 21/TOO_MANY_COLUMNS 22/TOO_MANY_ROWS 23/OPEN 24/CLOSED 25/RATE_TOO_HIGH
+0x4c9	201	SOH_TRACKER2	NUM_ATTITUDE_STARS	Num Stars Used in Att	uint8	1	none
+0x4ca	202	SOH_GPS	GPS_LOCK_COUNT	Number of GPS Locks Obtained	uint16	1	none
+0x4cc	204	SOH_GPS	GPS_VALID	GPS Valid	uint8	1	1/YES 0/NO
+0x4cd	205	SOH_GPS	GPS_ENABLE	GPS Enabled	uint8	1	1/YES 0/NO
+0x4ce	206	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK1	Latched Response Fired Bitpack	uint8	1	bitpack
+0x4ce	206	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT8	Latched Response Fired Bitpack bit 8	uint1	1	none
+0x4ce:1	206:1	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT7	Latched Response Fired Bitpack bit 7	uint1	1	none
+0x4ce:2	206:2	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT6	Latched Response Fired Bitpack bit 6	uint1	1	none
+0x4ce:3	206:3	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT5	Latched Response Fired Bitpack bit 5	uint1	1	none
+0x4ce:4	206:4	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT4	Latched Response Fired Bitpack bit 4	uint1	1	none
+0x4ce:5	206:5	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT3	Latched Response Fired Bitpack bit 3	uint1	1	none
+0x4ce:6	206:6	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT2	Latched Response Fired Bitpack bit 2	uint1	1	none
+0x4ce:7	206:7	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT1	Latched Response Fired Bitpack bit 1	uint1	1	none
+0x4cf	207	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK2	Latched Response Fired Bitpack	uint8	1	bitpack
+0x4cf	207	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT16	Latched Response Fired Bitpack bit 16	uint1	1	none
+0x4cf:1	207:1	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT15	Latched Response Fired Bitpack bit 15	uint1	1	none
+0x4cf:2	207:2	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT14	Latched Response Fired Bitpack bit 14	uint1	1	none
+0x4cf:3	207:3	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT13	Latched Response Fired Bitpack bit 13	uint1	1	none
+0x4cf:4	207:4	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT12	Latched Response Fired Bitpack bit 12	uint1	1	none
+0x4cf:5	207:5	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT11	Latched Response Fired Bitpack bit 11	uint1	1	none
+0x4cf:6	207:6	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT10	Latched Response Fired Bitpack bit 10	uint1	1	none
+0x4cf:7	207:7	SOH_EVENT_CHECK	LATCHED_RESP_FIRE_PACK_BIT9	Latched Response Fired Bitpack bit 9	uint1	1	none
+0x4d0	208	SOH_RADIO	SD_MINUTE_CUR	SD Card Current Minute Number	uint32	1	none
+0x4d4	212	SOH_RADIO	SD_PERCENT_USED_TOTAL	SD Card Used Space Percentage Total	uint8	1	percent
+0x4d5	213	SOH_RADIO	SD_OK	SD Card Healthy?	uint8	1	1/YES 0/NO
+0x4d6	214	SOH_RADIO	SD_FAULT_COUNT	SD Card Count Of Re-openings	uint8	1	none
+0x4d7	215	SOH_RADIO	SDR_TX_TX_FRAMES	BCT-SDR-TX tx frame counter	uint32	1	none
+0x4db	219	SOH_RADIO	SDR_TX_TEMP	BCT-SDR-TX temperature	int8	1	C
+0x4dc	220	SOH_RADIO	SDR_TX_COMM_ERROR	BCT-SDR-TX temperature	uint8	1	0/NO 1/YES
+0x4dd	221	SOH_RADIO	SQ_CHANNEL	SpaceQuest Current Channel Selection	int8	1	none
+0x4de	222	SOH_RADIO	SQ_TRAP_COUNT	SpaceQuest Trap-Error Cycle Count	uint8	1	none
+0x4df	223	SOH_RADIO	SQ_TEMP	SpaceQuest Temperature	uint8	1	C
+0x4e0	224	SOH_TRACKER_CTRL	AID_STATUS1	Tracker Aiding Status	uint8	1	bitpack_(see_User_Guide)
+0x4e0	224	SOH_TRACKER_CTRL	AID_STATUS_BIT8	Tracker Aiding Status bit 8	uint1	1	none
+0x4e0:1	224:1	SOH_TRACKER_CTRL	AID_STATUS_BIT7	Tracker Aiding Status bit 7	uint1	1	none
+0x4e0:2	224:2	SOH_TRACKER_CTRL	AID_STATUS_BIT6	Tracker Aiding Status bit 6	uint1	1	none
+0x4e0:3	224:3	SOH_TRACKER_CTRL	AID_STATUS_BIT5	Tracker Aiding Status bit 5	uint1	1	none
+0x4e0:4	224:4	SOH_TRACKER_CTRL	AID_STATUS_BIT4	Tracker Aiding Status bit 4	uint1	1	none
+0x4e0:5	224:5	SOH_TRACKER_CTRL	AID_STATUS_BIT3	Tracker Aiding Status bit 3	uint1	1	none
+0x4e0:6	224:6	SOH_TRACKER_CTRL	AID_STATUS_BIT2	Tracker Aiding Status bit 2	uint1	1	none
+0x4e0:7	224:7	SOH_TRACKER_CTRL	AID_STATUS_BIT1	Tracker Aiding Status bit 1	uint1	1	none
+0x4e1	225	SOH_TRACKER_CTRL	AID_STATUS2	Tracker Aiding Status	uint8	1	bitpack_(see_User_Guide)
+0x4e1	225	SOH_TRACKER_CTRL	AID_STATUS_BIT16	Tracker Aiding Status bit 16	uint1	1	none
+0x4e1:1	225:1	SOH_TRACKER_CTRL	AID_STATUS_BIT15	Tracker Aiding Status bit 15	uint1	1	none
+0x4e1:2	225:2	SOH_TRACKER_CTRL	AID_STATUS_BIT14	Tracker Aiding Status bit 14	uint1	1	none
+0x4e1:3	225:3	SOH_TRACKER_CTRL	AID_STATUS_BIT13	Tracker Aiding Status bit 13	uint1	1	none
+0x4e1:4	225:4	SOH_TRACKER_CTRL	AID_STATUS_BIT12	Tracker Aiding Status bit 12	uint1	1	none
+0x4e1:5	225:5	SOH_TRACKER_CTRL	AID_STATUS_BIT11	Tracker Aiding Status bit 11	uint1	1	none
+0x4e1:6	225:6	SOH_TRACKER_CTRL	AID_STATUS_BIT10	Tracker Aiding Status bit 10	uint1	1	none
+0x4e1:7	225:7	SOH_TRACKER_CTRL	AID_STATUS_BIT9	Tracker Aiding Status bit 9	uint1	1	none
+0x4e2	226	SOH_TRACKER_CTRL	STAR_ID_STATUS	Tracker Performing StarId	uint8	1	none
